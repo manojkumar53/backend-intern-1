@@ -19,7 +19,7 @@ quizRoute.get("/",(req,res)=>{
     })
 })
 quizRoute.route("/update-quiz/:id")
-.get((req,res)=>{quizSchema.find(mongoose.Types.ObjectId(req.params.id),(err,data)=>
+.get((req,res)=>{quizSchema.findById(mongoose.Types.ObjectId(req.params.id),(err,data)=>
 {
 if(err)
 return err;
