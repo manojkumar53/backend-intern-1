@@ -31,10 +31,14 @@ quizSchema.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id)
 ,
 {$set: req.body},
 (err,data)=>{
-if(err)
+if(err){
+console.log(err);
 return err;
-else
+}
+else{
+  console.log("successfully edited");
 res.json(data);
+}
 })
 })
 quizRoute.delete("/delete-quiz/:id",(req,res)=>{
