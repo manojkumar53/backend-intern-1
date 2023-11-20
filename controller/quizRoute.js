@@ -22,6 +22,7 @@ quizRoute.route("/update-quiz/:id")
 .get((req,res)=>{quizSchema.findById(mongoose.Types.ObjectId(req.params.id),(err,data)=>
 {
 console.log("Inside update quiz");
+console.log(req.body);
 if(err)
 {
 console.log(err)
@@ -35,6 +36,8 @@ res.json(data);
 }
 })
 }).put((req,res)=>{
+  console.log("Inside update quiz mongodb");
+  console.log(req.body);
 quizSchema.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id)
 ,
 {$set: req.body},
