@@ -21,10 +21,18 @@ quizRoute.get("/",(req,res)=>{
 quizRoute.route("/update-quiz/:id")
 .get((req,res)=>{quizSchema.findById(mongoose.Types.ObjectId(req.params.id),(err,data)=>
 {
+console.log("Inside update quiz");
 if(err)
+{
+console.log(err)
 return err;
+}
 else
+{
+  console.log("successfully sent");
+  console.log(data);
 res.json(data);
+}
 })
 }).put((req,res)=>{
 quizSchema.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id)
@@ -37,6 +45,7 @@ return err;
 }
 else{
   console.log("successfully edited");
+  console.log(data);
 res.json(data);
 }
 })
