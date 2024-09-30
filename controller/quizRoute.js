@@ -50,6 +50,7 @@ else{
   console.log("successfully edited");
   console.log(data);
 res.json(data);
+
 }
 })
 })

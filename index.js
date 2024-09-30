@@ -21,6 +21,7 @@ app.post("/login",(req,res)=>{
             if(user.password===password){
                  res.json("success")
                 // alert("success")
+
             }
             else{
                 res.json("the password is incorrect")
